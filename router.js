@@ -1,31 +1,26 @@
 const { Router } = require('express');
 const {
- orderController,
- userController,
- restaurantController,
+ tweetController
 } = require('./controller');
 
-const restaurantRouter = new Router();
-const userRouter = new Router();
-const orderRouter = new Router();
+const tweetRouter = new Router();
 
-restaurantRouter.get('/all', restaurantController.get);
-restaurantRouter.get('/:id', restaurantController.get);
-restaurantRouter.post('/', restaurantController.post);
+tweetRouter.get('/all', tweetController.get);
+tweetRouter.get('/', tweetController.get);
+// tweetRouter.get('/:id', restaurantController.get);
+// tweetRouter.post('/', restaurantController.post);
 
-userRouter.get('/:id', userController.get);
-userRouter.post('/', userController.post);
-userRouter.put('/:id', userController.put);
+// userRouter.get('/:id', userController.get);
+// userRouter.post('/', userController.post);
+// userRouter.put('/:id', userController.put);
 
-//settings
-orderRouter.get('/:id', orderController.get);
-orderRouter.post('/', orderController.post);
-orderRouter.put('/:id', orderController.put);
-orderRouter.delete('/:id', orderController.delete);
+// //settings
+// orderRouter.get('/:id', orderController.get);
+// orderRouter.post('/', orderController.post);
+// orderRouter.put('/:id', orderController.put);
+// orderRouter.delete('/:id', orderController.delete);
 
 module.exports = {
-    restaurantRouter,
-    userRouter,
-    orderRouter,
-   };
+    tweetRouter,
+};
    

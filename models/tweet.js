@@ -1,6 +1,6 @@
-const { Schema, model } = require('mongoose');
+const mongoose = require('mongoose');
 
-const tweetSchema = new Schema ({
+const schema = new mongoose.Schema ({
 id:{ type: Number, required:true},
 content: {type:String, required:true},
 userId: {type: String, required:true},
@@ -9,6 +9,6 @@ parentTweetId: {type: Number}
     collection: 'tweets'
 });
 
-const Tweet = model('Tweet', userSchema);
+const Tweet = mongoose.model('Tweet', schema);
 
 module.exports = Tweet;
