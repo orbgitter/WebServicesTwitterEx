@@ -1,6 +1,6 @@
 const Express = require('express');
 const logger = require('morgan'); // NOTE: for debugging
-const { orderRouter, restaurantRouter, userRouter } = require('./router');
+// const { orderRouter, restaurantRouter, userRouter } = require('./router');
 const app = Express();
 const port = process.env.PORT || 3000;
 
@@ -8,9 +8,9 @@ app.use(Express.json());
 app.use(Express.urlencoded({ extended: true }));
 app.use(logger('dev'));
 
-app.use('/restaurant', restaurantRouter);
-app.use('/user', userRouter);
-app.use('/account', orderRouter);
+// app.use('/restaurant', restaurantRouter);
+// app.use('/user', userRouter);
+// app.use('/account', orderRouter);
 
 
 //exception catch
