@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 // const { DB_CLUSTER, DB_USER, DB_PASS, DB_HOST } = require('./constants');
 const { DB_CLUSTER, DB_USER, DB_PASS, DB_HOST } = process.env.DB_CLUSTER ? process.env : require('./constants');
 
+console.log(DB_HOST)
+
 const connectionString = `mongodb+srv://${DB_USER}:${DB_PASS}@${DB_CLUSTER}-${DB_HOST}`;
 
 const options = {
