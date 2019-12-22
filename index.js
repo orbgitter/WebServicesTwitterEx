@@ -8,7 +8,7 @@ app.use(Express.json());
 app.use(Express.urlencoded({ extended: true }));
 app.use(logger('dev'));
 
-require('./db_connections');
+// require('./db_connections');
 
 app.use('/tweet', tweetRouter);
 // app.use('/user', userRouter);

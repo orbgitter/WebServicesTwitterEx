@@ -5,11 +5,12 @@ const {
 
 const tweetRouter = new Router();
 
-tweetRouter.get('/all', tweetController.get);
-tweetRouter.get('/', tweetController.get);
-// tweetRouter.get('/:id', restaurantController.get);
-// tweetRouter.post('/', restaurantController.post);
-
+tweetRouter.get('/all', tweetController.getAllTweets);
+tweetRouter.get('/', tweetController.getAllTweets);
+tweetRouter.get('/:id', tweetController.getTweetById);
+tweetRouter.post('/', tweetController.addTweeter);
+tweetRouter.put('/:id', tweetController.editTweet);
+tweetRouter.delete('/:id', tweetController.removeTweet);
 // userRouter.get('/:id', userController.get);
 // userRouter.post('/', userController.post);
 // userRouter.put('/:id', userController.put);

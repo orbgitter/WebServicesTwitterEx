@@ -10,6 +10,11 @@ const options = {
   useUnifiedTopology: true // To remove annoying warning
 };
 
-mongoose.connect(connectionString, options)
-    .then(db => console.log(`MongoDB is initialized & connected to ${db.connection.name}`))
-    .catch(err => console.log('Connection Error', err));
+// mongoose.connect(connectionString, options)
+//     .then(db => console.log(`MongoDB is initialized & connected to ${db.connection.name}`))
+//     .catch(err => console.log('Connection Error', err));
+
+module.exports = {
+    mongoDbOptions: options,
+    mongoDbUrl: connectionString
+};
