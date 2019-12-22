@@ -4,3 +4,4 @@ module.exports = {
     DB_PASS: 'einsisma2!',
     DB_HOST: 'bkahm.mongodb.net/TweetsDatabase?retryWrites=true&w=majority'
 };
+
