@@ -70,10 +70,12 @@ exports.tweetController = {
     editTweet(req,res,next){
       mongoose.connect(mongodb.mongoDbUrl, mongodb.mongoDbOptions)
       .then(async() => {
-        const {id = null} = req.params;
+        const {id = null} = req.params;  
         const {userId = null, content = null, parentTweetId = null} = req.body;
-        const result = await Tweet.updateOne({_id: id}, {userId, content, parentTweetId})   // _id with '_' because mongo generate it auto for us. format-> {generated id KEY : our id (null) VALUE, all the params to update}    
-        
+        if(!(content == ' ' || content.length == 0 || content.length > 280)){
+          const result = await Tweet.updateOne({_id: id}, {userId, content, parentTweetId})   // _id with '_' because mongo generate it auto for us. format-> {generated id KEY : our id (null) VALUE, all the params to update}    
+        }     
+          
         if(result) res.json(result)
         else res.status(404).send(`tweet with the id ${id} has not been found`);
       })
